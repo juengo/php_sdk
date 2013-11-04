@@ -9,6 +9,21 @@ http://www.juengo.com and information about the API and how to use it at http://
 HOW TO USE:
 ===========
 
+You would need to include the juengo.class.php and initialize the class with the required configuration
+by setting your Juengo app's API KEY and APP SECRET.
+
+example:
+
+require_once('juengo/juengo.class.php');
+
+$config = array(
+	"APIKEY"=>"",
+	"SECRET"=>"",
+	"DEBUG"=> false
+);
+
+$myjuengoclass = new Juengo($config);
+
 Please visit http://developers.juengo.com for information on how to use this API.
 
 
