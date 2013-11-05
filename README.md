@@ -29,10 +29,11 @@ Please visit http://developers.juengo.com for information on how to use this API
 
 REQUIREMENTS:
 =============
-You must register to Juengo for Communities before being able to use any of Juengo services 
+* You must register to Juengo for Communities before being able to use any of Juengo services 
 (Information found here http://www.juengo.com/corporate)
+* PHP 5> (+ json_decode extension)
 
-For PHP 5+
+
 
 CURRENT VERSION:
 ================
