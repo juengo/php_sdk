@@ -23,12 +23,17 @@ if (!function_exists('json_decode')) {
 
 class Juengo{
 
+	// automatically configurable by contractor
 	private $apikey = null;
 	private $secret = null;
 	private $debug = false;	
-	private static $apiVersion = "2.0";	
+	private $sandbox = true;
 	
+	// Configurable within file
+	private static $apiVersion = "2.0";		
 	private $curlEnabled = true;
+	private static $domain_extension = array("default"="com", "USA"=>"com", "GREECE"=>"gr");
+	
 	
 	function __construct($config) {
 		if(!isset($config['APIKEY']) || empty($config['APIKEY']) || !isset($config['SECRET']) || empty($config['SECRET'])){
@@ -37,19 +42,20 @@ class Juengo{
 		$this->apikey = $config['APIKEY'];
 		$this->secret = $config['SECRET'];		
 		$this->debug = $config['DEBUG'];
+		$this->sandbox = (!isset($config['SANDBOX']) ? true : ($config['SANDBOX']==false ? false : true));
 		
 		if(!function_exists('curl_init')) {
 			$this->curlEnabled=false;
 			$this->showLog('CURL PHP extension not found. Changing to regular HTTP posts.');
 		}	
-    }
+	}
 
 	private function api_path(){
-		if($this->debug==true){
+		if($this->sandbox==true){
 			return "http://sandbox.juengo.com";	
 		}
 		else{
-			return "https://developers.juengo.com";
+			return "https://developers.juengo.".$this->domain_extension['default'];
 		}
 	}
 	
