@@ -5,7 +5,8 @@ require_once('juengo/juengo.class.php');
 $config = array(
 	"APIKEY"=>"",
 	"SECRET"=>"",
-	"DEBUG"=> false
+	"DEBUG"=>false,
+	"SANDBOX"=>true
 );
 
 $jn = new Juengo($config);
