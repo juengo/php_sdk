@@ -14,16 +14,18 @@ by setting your Juengo app's API KEY and APP SECRET.
 
 example:
 
+```php
 require_once('juengo/juengo.class.php');
 
 $config = array(
-	"APIKEY"=>"",
-	"SECRET"=>"",
+	"APIKEY"=>"YOUR API KEY",
+	"SECRET"=>"YOUR APP SECRET",
 	"DEBUG"=> false,
 	"SANDBOX"=>true
 );
 
 $myjuengoclass = new Juengo($config);
+```
 
 Please visit http://developers.juengo.com for information on how to use this API.
 
