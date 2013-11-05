@@ -19,13 +19,18 @@ require_once('juengo/juengo.class.php');
 $config = array(
 	"APIKEY"=>"",
 	"SECRET"=>"",
-	"DEBUG"=> false
+	"DEBUG"=> false,
+	"SANDBOX"=>true
 );
 
 $myjuengoclass = new Juengo($config);
 
 Please visit http://developers.juengo.com for information on how to use this API.
 
+IMPORTANT!
+==========
+Prior running any of your code, make sure to modify the juengo.class.php and set the default 
+domain extension (default is com, other include gr) to the Juengo platform you have access to (USA or Greece)
 
 REQUIREMENTS:
 =============
